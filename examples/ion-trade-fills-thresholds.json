@@ -1,0 +1,17 @@
+{
+  "repo": "ion-trade-fills-gate",
+  "thresholds": {
+    "signal": 2,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 5,
+    "ship": 189,
+    "watch": 129
+  },
+  "terms": [
+    "spread pressure",
+    "fill risk",
+    "portfolio drift",
+    "quote width"
+  ]
+}
