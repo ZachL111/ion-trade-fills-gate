@@ -1,0 +1,73 @@
+{
+  "repo": "ion-trade-fills-gate",
+  "language": "Zig",
+  "category": "Trading systems",
+  "goal": "Design a Zig verification harness for fills systems, covering security rule linting, safe and unsafe fixtures, and failure-oriented tests.",
+  "review_model": {
+    "terms": [
+      "spread pressure",
+      "fill risk",
+      "portfolio drift",
+      "quote width"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "spread pressure",
+      "signal": 44,
+      "slack": 41,
+      "drag": 22,
+      "confidence": 93,
+      "score": 156,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "fill risk",
+      "signal": 48,
+      "slack": 54,
+      "drag": 29,
+      "confidence": 69,
+      "score": 132,
+      "lane": "watch"
+    },
+    {
+      "name": "edge",
+      "focus": "portfolio drift",
+      "signal": 62,
+      "slack": 24,
+      "drag": 26,
+      "confidence": 63,
+      "score": 133,
+      "lane": "watch"
+    },
+    {
+      "name": "recovery",
+      "focus": "quote width",
+      "signal": 56,
+      "slack": 35,
+      "drag": 8,
+      "confidence": 49,
+      "score": 172,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "spread pressure",
+      "signal": 83,
+      "slack": 36,
+      "drag": 23,
+      "confidence": 46,
+      "score": 179,
+      "lane": "ship"
+    }
+  ]
+}
